@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 5c92e9990c105084dbac5ed1cc63fe5b
+guid: 1fe7d7f588b795547b90b7a78c6ade65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4513510778391508015
-    second: Power ups_0
+      213: 2868539044483428322
+    second: wall_0
   - first:
-      213: 3084120968479743065
-    second: Power ups_1
+      213: -5107677499478342438
+    second: wall_1
   - first:
-      213: -6878812886643091703
-    second: Power ups_2
+      213: 6451264694632907309
+    second: wall_2
   - first:
-      213: -8913884230200981309
-    second: Power ups_3
+      213: 6933618418553894829
+    second: wall_3
   - first:
-      213: -2307248299258506362
-    second: Power ups_4
+      213: -282635231382982036
+    second: wall_4
   - first:
-      213: 2476738246343623634
-    second: Power ups_5
+      213: 8271096184780980891
+    second: wall_5
   - first:
-      213: 1935401252035218951
-    second: Power ups_6
+      213: -5381153769289946764
+    second: wall_6
   - first:
-      213: 2618291491992585189
-    second: Power ups_7
+      213: -7850380311542539340
+    second: wall_7
   - first:
-      213: -2031527654618218674
-    second: Power ups_8
+      213: 6356908062157346430
+    second: wall_8
   - first:
-      213: -6223353184511681697
-    second: Power ups_9
+      213: -4115494802581380263
+    second: wall_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,181 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Power ups_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 53
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 1, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dbc3145cd9cc51c0800000000000000
-      internalID: -4513510778391508015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 53
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95c91923eaffcca20800000000000000
-      internalID: 3084120968479743065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_2
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 53
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9075247002c8980a0800000000000000
-      internalID: -6878812886643091703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_3
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 53
-        width: 14
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c80ae935858b4480800000000000000
-      internalID: -8913884230200981309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 42
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 683921a65e10bffd0800000000000000
-      internalID: -2307248299258506362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_5
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 42
-        width: 15
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d38fee00542f5220800000000000000
-      internalID: 2476738246343623634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 43
-        width: 14
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70ec76d3f2debda10800000000000000
-      internalID: 1935401252035218951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_7
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 30
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e345aa5d3a065420800000000000000
-      internalID: 2618291491992585189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Power ups_8
+      name: wall_0
       rect:
         serializedVersion: 2
         x: 16
-        y: 29
-        width: 14
-        height: 12
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4f39139c509ec3e0800000000000000
-      internalID: -2031527654618218674
+      spriteID: 2efe5c210191fc720800000000000000
+      internalID: 2868539044483428322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Power ups_9
+      name: wall_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 27
-        width: 15
-        height: 14
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,8 +192,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b926d504532a9a0800000000000000
-      internalID: -6223353184511681697
+      spriteID: ad486583062ed19b0800000000000000
+      internalID: -5107677499478342438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d220d9b3f0f778950800000000000000
+      internalID: 6451264694632907309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7b20e3739293060800000000000000
+      internalID: 6933618418553894829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62386821c0e31cf0800000000000000
+      internalID: -282635231382982036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9285fc6826d8c270800000000000000
+      internalID: 8271096184780980891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479e7bb482d4255b0800000000000000
+      internalID: -5381153769289946764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb59c223b8dd0390800000000000000
+      internalID: -7850380311542539340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7694b2c336483850800000000000000
+      internalID: 6356908062157346430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953ab292843d2e6c0800000000000000
+      internalID: -4115494802581380263
       vertices: []
       indices: 
       edges: []
