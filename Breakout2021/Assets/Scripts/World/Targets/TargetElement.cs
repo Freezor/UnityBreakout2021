@@ -9,7 +9,7 @@ namespace Owahu.Breakout.World.Targets
         private int _numberOfHits;
 
         [SerializeField] public FlashRenderer flashScript;
-        [SerializeField] public Color flashColor = Color.white;
+        [SerializeField] public Color[] flashColors;
         
         private void Start()
         {
@@ -25,7 +25,15 @@ namespace Owahu.Breakout.World.Targets
 
             if (flashScript != null)
             {
-                flashScript.Flash(flashColor);
+                // TODO: flash for amount of hits
+                if (flashColors != null)
+                {
+                    flashScript.Flash(flashColors(_numberOfHits));
+                }
+                else
+                {
+                    flashScript.Flash(Color.white);
+                }
             }
             
             _numberOfHits++;
