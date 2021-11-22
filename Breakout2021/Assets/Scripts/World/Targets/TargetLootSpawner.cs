@@ -9,9 +9,6 @@ namespace Owahu.Breakout.World.Targets
         // Loot drop table that contains items that can spawn
         public GenericLootDropTableGameObject lootDropTable;
 
-        public void Start()
-        {
-        }
 
         void OnValidate()
         {
@@ -28,17 +25,22 @@ namespace Owahu.Breakout.World.Targets
             for (var i = 0; i < amountOfItemsToDrop; i++)
             {
                 var selectedItem = lootDropTable.PickLootDropItem();
-                var selectedItemGameObject = Instantiate(selectedItem.Item);
-                if (amountOfItemsToDrop == 1)
-                {
-                    var gameObjectPosition = gameObject.transform.position;
-                    selectedItemGameObject.transform.position = new Vector2(gameObjectPosition.x,
-                        gameObjectPosition.y - 0.05f);
-                }
-                else
-                {
-                    selectedItemGameObject.transform.position = new Vector2(i / 2f, 0f);
-                }
+                SpawnItemInWorld(amountOfItemsToDrop, selectedItem, i);
+            }
+        }
+
+        private void SpawnItemInWorld(int amountOfItemsToDrop, GenericLootDropItemGameObject selectedItem, int i)
+        {
+            var selectedItemGameObject = Instantiate(selectedItem.Item);
+            if (amountOfItemsToDrop == 1)
+            {
+                var gameObjectPosition = gameObject.transform.position;
+                selectedItemGameObject.transform.position = new Vector2(gameObjectPosition.x,
+                    gameObjectPosition.y - 0.05f);
+            }
+            else
+            {
+                selectedItemGameObject.transform.position = new Vector2(i / 2f, 0f);
             }
         }
     }
