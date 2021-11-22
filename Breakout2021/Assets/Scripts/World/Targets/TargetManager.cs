@@ -11,11 +11,10 @@ namespace Owahu.Breakout.World.Targets
         [SerializeField] public FlashRenderer flashScript;
         [SerializeField] public TargetLootSpawner lootSpawner;
         [SerializeField] public Color flashColor;
-        
+
         private void Start()
         {
             _numberOfHits = 0;
-            lootSpawner.DropLoot();
         }
 
 
@@ -30,12 +29,15 @@ namespace Owahu.Breakout.World.Targets
             {
                 flashScript.Flash(flashColor);
             }
-            
+
             _numberOfHits++;
-            if (_numberOfHits >= hitsToKill)
+            if (_numberOfHits < hitsToKill)
             {
-                Destroy(gameObject);
+                return;
             }
+            GameManager.GameManager.AddScore(scoreOnDestroy);
+            Destroy(gameObject);
+            lootSpawner.DropLoot();
         }
     }
 }

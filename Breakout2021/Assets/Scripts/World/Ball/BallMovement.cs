@@ -43,32 +43,53 @@ namespace Owahu.Breakout.World.Ball
             {
                 LaunchBall();
             }
+            
+            if (!(_ballRigidBody.position.y < -2))
+            {
+                return;
+            }
+
+            GameManager.GameManager.Instance.AddScoreToHighScore();
+            GameManager.GameManager.Instance.RemoveLife();
+            _isLaunched = false;
+            SetBallPositionAbovePlayerPosition();
         }
 
         private void FixedUpdate()
         {
             if (!_isLaunched)
             {
-                var position = _player.position;
-                _ballRigidBody.position =
-                    new Vector2(position.x, position.y + PositionYModificatorToDisplayBallAbovePlayer);
+                SetBallPositionAbovePlayerPosition();
             }
 
-            if (_ballRigidBody.position.y < -2)
-            {
-                _ballRigidBody.position = Vector2.zero;
-            }
+        }
+
+        private void SetBallPositionAbovePlayerPosition()
+        {
+            var position = _player.position;
+            _ballRigidBody.position =
+                new Vector2(position.x, position.y + PositionYModificatorToDisplayBallAbovePlayer);
         }
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            // Hit the Racket?
-            if (col.gameObject.name.ToLower() != "player")
+            switch (col.gameObject.name.ToLower())
             {
-                return;
+                // Hit the Racket?
+                case "player":
+                {
+                    GameManager.GameManager.Instance.AddScoreToHighScore();
+                    CalculateRacketCollision(col);
+                    break;
+                }
+                case "block":
+                    GameManager.GameManager.Instance.AddScoreMultiplier();
+                    break;
             }
+        }
 
-            // Calculate hit Factor
+        private void CalculateRacketCollision(Collision2D col)
+        {
             var x = HitFactor(transform.position,
                 col.transform.position,
                 col.collider.bounds.size.x);
