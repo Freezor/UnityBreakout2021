@@ -31,6 +31,10 @@ namespace Owahu.Breakout.World.Targets
 
         private void SpawnItemInWorld(int amountOfItemsToDrop, GenericLootDropItemGameObject selectedItem, int i)
         {
+            if (selectedItem == null || selectedItem.Item == null)
+            {
+                return;
+            }
             var selectedItemGameObject = Instantiate(selectedItem.Item);
             if (amountOfItemsToDrop == 1)
             {

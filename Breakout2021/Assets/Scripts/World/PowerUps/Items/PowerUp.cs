@@ -21,9 +21,9 @@ namespace Owahu.Breakout.World.PowerUps.Items
         /// <summary>
         /// It is handy to keep a reference to the player that collected us
         /// </summary>
-        protected RacketMovement playerBrain;
+        protected RacketMovement PlayerBrain;
 
-        protected SpriteRenderer spriteRenderer;
+        protected SpriteRenderer SpriteRenderer;
 
         protected enum PowerUpState
         {
@@ -36,7 +36,7 @@ namespace Owahu.Breakout.World.PowerUps.Items
 
         protected virtual void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            SpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         protected virtual void Start()
@@ -77,13 +77,14 @@ namespace Owahu.Breakout.World.PowerUps.Items
             powerUpState = PowerUpState.IsCollected;
 
             // We must have been collected by a player, store handle to player for later use      
-            playerBrain = gameObjectCollectingPowerUp.GetComponent<RacketMovement>();
+            PlayerBrain = gameObjectCollectingPowerUp.GetComponent<RacketMovement>();
 
             // We move the power up game object to be under the player that collect it, this isn't essential for functionality 
             // presented so far, but it is neater in the gameObject hierarchy
             var powerUpObject = gameObject;
-            powerUpObject.transform.parent = playerBrain.gameObject.transform;
-            powerUpObject.transform.position = playerBrain.gameObject.transform.position;
+            var brainGameObject = PlayerBrain.gameObject;
+            powerUpObject.transform.parent = brainGameObject.transform;
+            powerUpObject.transform.position = brainGameObject.transform.position;
 
             // Collection effects
             PowerUpEffects();
@@ -92,13 +93,13 @@ namespace Owahu.Breakout.World.PowerUps.Items
             PowerUpPayload();
 
             // Send message to any listeners
-            foreach (GameObject go in EventSystemListeners.main.listeners)
+            foreach (var go in EventSystemListeners.main.listeners)
             {
-                ExecuteEvents.Execute<IPowerUpEvents>(go, null, (x, y) => x.OnPowerUpCollected(this, playerBrain));
+                ExecuteEvents.Execute<IPowerUpEvents>(go, null, (x, y) => x.OnPowerUpCollected(this, PlayerBrain));
             }
 
             // Now the power up visuals can go away
-            spriteRenderer.enabled = false;
+            SpriteRenderer.enabled = false;
         }
 
         protected virtual void PowerUpEffects()
@@ -137,7 +138,7 @@ namespace Owahu.Breakout.World.PowerUps.Items
             // Send message to any listeners
             foreach (GameObject go in EventSystemListeners.main.listeners)
             {
-                ExecuteEvents.Execute<IPowerUpEvents>(go, null, (x, y) => x.OnPowerUpExpired(this, playerBrain));
+                ExecuteEvents.Execute<IPowerUpEvents>(go, null, (x, y) => x.OnPowerUpExpired(this, PlayerBrain));
             }
 
             Debug.Log("Power Up has expired, removing after a delay for: " + gameObject.name);

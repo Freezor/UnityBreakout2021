@@ -11,6 +11,8 @@ namespace Owahu.Breakout.World.PowerUps.Events
             "Listeners that want to know about messages.  By default any object with tag = Listener is included, but you can add more here, or add at runtime with method EventSystemListeners.main.AddListener()")]
         public List<GameObject> listeners;
 
+        public List<string> itemTags;
+        
         /// <summary>
         /// Check we are singleton
         /// </summary>
@@ -24,6 +26,17 @@ namespace Owahu.Breakout.World.PowerUps.Events
             {
                 Debug.LogWarning("EventSystemListeners re-creation attempted, destroying the new one");
                 Destroy(gameObject);
+            }
+
+            AddListenersForAllTaggeObjects();
+        }
+
+        private void AddListenersForAllTaggeObjects()
+        {
+            foreach (var itemTag in itemTags)
+            {
+                var taggedObjects = GameObject.FindGameObjectsWithTag(itemTag);
+                listeners.AddRange(taggedObjects);
             }
         }
 

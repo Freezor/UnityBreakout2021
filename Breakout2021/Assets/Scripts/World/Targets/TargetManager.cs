@@ -1,8 +1,9 @@
+using Owahu.Breakout.World.PowerUps.Events;
 using UnityEngine;
 
 namespace Owahu.Breakout.World.Targets
 {
-    public class TargetManager : MonoBehaviour
+    public class TargetManager : MonoBehaviour, IInvisibleBlockEvent
     {
         public int scoreOnDestroy = 100;
         public int hitsToKill = 1;
@@ -11,10 +12,12 @@ namespace Owahu.Breakout.World.Targets
         [SerializeField] public FlashRenderer flashScript;
         [SerializeField] public TargetLootSpawner lootSpawner;
         [SerializeField] public Color flashColor;
+        private Renderer _renderer;
 
         private void Start()
         {
             _numberOfHits = 0;
+            _renderer = gameObject.GetComponent<Renderer>();
         }
 
 
@@ -38,6 +41,16 @@ namespace Owahu.Breakout.World.Targets
             GameManager.GameManager.AddScore(scoreOnDestroy);
             Destroy(gameObject);
             lootSpawner.DropLoot();
+        }
+
+        public void OnTriggerInvisibility()
+        {
+            _renderer.enabled = false;
+        }
+
+        public void OnDisplayBlockAgain()
+        {
+            _renderer.enabled = true;
         }
     }
 }
