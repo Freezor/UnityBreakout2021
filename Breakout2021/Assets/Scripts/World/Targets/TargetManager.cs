@@ -1,20 +1,27 @@
+using System;
+using System.Collections.Generic;
+using Owahu.Breakout.World.PowerUps;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace Owahu.Breakout.World.Targets
 {
-    public class TargetElement : MonoBehaviour
+    public class TargetManager : MonoBehaviour
     {
         public int scoreOnDestroy = 100;
         public int hitsToKill = 1;
         private int _numberOfHits;
 
         [SerializeField] public FlashRenderer flashScript;
-        [SerializeField] public Color[] flashColors;
+        [SerializeField] public TargetLootSpawner lootSpawner;
+        [SerializeField] public Color flashColor;
         
         private void Start()
         {
             _numberOfHits = 0;
+            lootSpawner.DropLoot();
         }
+
 
         void OnCollisionEnter2D(Collision2D collisionInfo)
         {
@@ -25,15 +32,7 @@ namespace Owahu.Breakout.World.Targets
 
             if (flashScript != null)
             {
-                // TODO: flash for amount of hits
-                if (flashColors != null)
-                {
-                    flashScript.Flash(flashColors(_numberOfHits));
-                }
-                else
-                {
-                    flashScript.Flash(Color.white);
-                }
+                flashScript.Flash(flashColor);
             }
             
             _numberOfHits++;
