@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Owahu.Breakout.World.PowerUps;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace Owahu.Breakout.World.Targets
 {

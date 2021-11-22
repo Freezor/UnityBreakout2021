@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace Owahu.Breakout.World.PowerUps
 {
