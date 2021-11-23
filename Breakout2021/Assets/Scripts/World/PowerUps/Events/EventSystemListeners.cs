@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Owahu.Breakout.World.PowerUps.Events
@@ -12,7 +13,7 @@ namespace Owahu.Breakout.World.PowerUps.Events
         public List<GameObject> listeners;
 
         public List<string> itemTags;
-        
+
         /// <summary>
         /// Check we are singleton
         /// </summary>
@@ -28,14 +29,13 @@ namespace Owahu.Breakout.World.PowerUps.Events
                 Destroy(gameObject);
             }
 
-            AddListenersForAllTaggeObjects();
+            AddListenersForAllTaggedObjects();
         }
 
-        private void AddListenersForAllTaggeObjects()
+        private void AddListenersForAllTaggedObjects()
         {
-            foreach (var itemTag in itemTags)
+            foreach (var taggedObjects in itemTags.Select(itemTag => GameObject.FindGameObjectsWithTag(itemTag)))
             {
-                var taggedObjects = GameObject.FindGameObjectsWithTag(itemTag);
                 listeners.AddRange(taggedObjects);
             }
         }
