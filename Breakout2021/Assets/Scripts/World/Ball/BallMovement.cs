@@ -48,11 +48,21 @@ namespace Owahu.Breakout.World.Ball
             {
                 return;
             }
-
+            
             GameManager.GameManager.Instance.AddScoreToHighScore();
-            GameManager.GameManager.Instance.RemoveLife();
-            _isLaunched = false;
-            SetBallPositionAbovePlayerPosition();
+            if (GameManager.GameManager.Instance.OnlyOneBallInGame())
+            {
+                
+                GameManager.GameManager.Instance.RemoveLife();
+                _isLaunched = false;
+                SetBallPositionAbovePlayerPosition();
+            }
+            else
+            {
+                GameManager.GameManager.Instance.BallsInGame--;
+                Destroy(this);
+            }
+
         }
 
         private void FixedUpdate()
