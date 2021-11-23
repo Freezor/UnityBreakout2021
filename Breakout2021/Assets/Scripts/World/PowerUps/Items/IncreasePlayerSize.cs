@@ -5,6 +5,7 @@ namespace Owahu.Breakout.World.PowerUps.Items
         protected override void PowerUpPayload()
         {
             base.PowerUpPayload();
+            Player.PlayerBrain.Instance.IncreaseSize();
         }
     }
 }
