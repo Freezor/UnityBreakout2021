@@ -43,16 +43,18 @@ namespace Owahu.Breakout.World.Ball
             {
                 LaunchBall();
             }
-            
-            if (!(_ballRigidBody.position.y < -2))
+
+            if (_ballRigidBody.position.y < -2)
             {
-                return;
+                ResetBall();
             }
-            
+        }
+
+        private void ResetBall()
+        {
             GameManager.GameManager.Instance.AddScoreToHighScore();
             if (GameManager.GameManager.Instance.OnlyOneBallInGame())
             {
-                
                 GameManager.GameManager.Instance.RemoveLife();
                 _isLaunched = false;
                 SetBallPositionAbovePlayerPosition();
@@ -62,7 +64,6 @@ namespace Owahu.Breakout.World.Ball
                 GameManager.GameManager.Instance.BallsInGame--;
                 Destroy(this);
             }
-
         }
 
         private void FixedUpdate()
@@ -71,7 +72,6 @@ namespace Owahu.Breakout.World.Ball
             {
                 SetBallPositionAbovePlayerPosition();
             }
-
         }
 
         private void SetBallPositionAbovePlayerPosition()
@@ -98,23 +98,23 @@ namespace Owahu.Breakout.World.Ball
             }
         }
 
-        private void CalculateRacketCollision(Collision2D col)
+        private void CalculateRacketCollision(Collision2D collider)
         {
-            var x = HitFactor(transform.position,
-                col.transform.position,
-                col.collider.bounds.size.x);
+            var xAxisDirection = HitFactor(transform.position,
+                collider.transform.position,
+                collider.collider.bounds.size.x);
 
             // Calculate direction, set length to 1
-            var dir = new Vector2(x, 1).normalized;
+            var direction = new Vector2(xAxisDirection, 1).normalized;
 
             // Set Velocity with dir * speed
-            _ballRigidBody.velocity = dir * speed;
+            _ballRigidBody.velocity = direction * speed;
 
             var tweak = new Vector2(Random.Range(0f, 0.1f), Random.Range(0f, 0.1f));
             _ballRigidBody.velocity += tweak;
         }
 
-        private float HitFactor(Vector2 ballPos, Vector2 racketPos,
+        private float HitFactor(Vector2 ballPosition, Vector2 racketPosition,
             float racketWidth)
         {
             // ascii art:
@@ -122,7 +122,7 @@ namespace Owahu.Breakout.World.Ball
             // 1  -0.5  0  0.5   1  <- x value
             // ===================  <- racket
             //
-            return (ballPos.x - racketPos.x) / racketWidth;
+            return (ballPosition.x - racketPosition.x) / racketWidth;
         }
     }
 }

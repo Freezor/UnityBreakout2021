@@ -22,12 +22,7 @@ namespace Owahu.Breakout.GameManager
             Instance = this;
             Score = 0;
             PlayerLife = playerStartingLife;
-            BallsInGame = 2;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
+            BallsInGame = GameObject.FindGameObjectsWithTag("Ball").Length;
         }
 
         public static void AddScore(int score)

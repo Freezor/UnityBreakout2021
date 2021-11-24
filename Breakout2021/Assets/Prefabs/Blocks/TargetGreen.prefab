@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8683139827985187218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8683139827985187229}
+  - component: {fileID: 8683139827985187230}
+  - component: {fileID: 8683139827985187231}
+  - component: {fileID: 8683139827985187216}
+  - component: {fileID: 8683139827985187217}
+  - component: {fileID: 8683139827985187227}
+  m_Layer: 0
+  m_Name: TargetGreen
+  m_TagString: Block
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8683139827985187229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.28005007, y: 0.10046029, z: 0.849692}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8683139827985187230
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -3503826170247296578, guid: 8f535b93615b4f349ae29f66305bb62b, type: 3}
+  m_Color: {r: 0.9245283, g: 0.8678355, b: 0.8678355, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.32, y: 0.09}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &8683139827985187231
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.09}
+    newSize: {x: 0.32, y: 0.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.09}
+  m_EdgeRadius: 0
+--- !u!114 &8683139827985187216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e149dc47ccf473f91c31ee64907dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreOnDestroy: 100
+  hitsToKill: 1
+  flashScript: {fileID: 8683139827985187217}
+  lootSpawner: {fileID: 8683139827985187227}
+  flashColor: {r: 0.2392157, g: 0.4431373, b: 0.16470589, a: 0.64705884}
+--- !u!114 &8683139827985187217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d80e242593942dcabe61def2eb0185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: ab6c3b46614504172b728525eae6c938, type: 2}
+  duration: 0.125
+--- !u!114 &8683139827985187227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683139827985187218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5df2332ecf04ee697553a4cc06856a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootDropTable:
+    lootDropItems:
+    - Item: {fileID: 0}
+      ProbabilityWeight: 60
+      ProbabilityPercent: 46.153847
+      ProbabilityRangeFrom: 0
+      ProbabilityRangeTo: 60
+    - Item: {fileID: 7936094570371613882, guid: cc78010c31443425499e0d5882fbc69d, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 7.6923075
+      ProbabilityRangeFrom: 60
+      ProbabilityRangeTo: 70
+    - Item: {fileID: 805637034429164311, guid: 7b19aa901ec994cd0aa43fecf1099ff5, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 7.6923075
+      ProbabilityRangeFrom: 70
+      ProbabilityRangeTo: 80
+    - Item: {fileID: 7558471002272048301, guid: 06901421f8037ec4f803f9b0a2123055, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 7.6923075
+      ProbabilityRangeFrom: 80
+      ProbabilityRangeTo: 90
+    - Item: {fileID: 3305336796724678273, guid: 5b599be16c875c74fbbeb5b9fd2b58b7, type: 3}
+      ProbabilityWeight: 15
+      ProbabilityPercent: 11.538462
+      ProbabilityRangeFrom: 90
+      ProbabilityRangeTo: 105
+    - Item: {fileID: 6010992249576804260, guid: ba7d4bb5030cc4141b4e090265f055cc, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 7.6923075
+      ProbabilityRangeFrom: 105
+      ProbabilityRangeTo: 115
+    - Item: {fileID: 7470358408380330297, guid: 55c1d218f2116094294add6d0f65a84b, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 3.8461537
+      ProbabilityRangeFrom: 115
+      ProbabilityRangeTo: 120
+    - Item: {fileID: 1723367004350821627, guid: b0218f955b23bad4e806263aff1187d1, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 7.6923075
+      ProbabilityRangeFrom: 120
+      ProbabilityRangeTo: 130

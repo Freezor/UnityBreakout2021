@@ -8,24 +8,24 @@ namespace Owahu.Breakout.World.PowerUps.Items
     public class DecreaseBallSize : PowerUp
     {
         
-        private GameObject ballInstance;
+        private GameObject _ballInstance;
         public float timeBeforeSizeResetSeconds = 10;
         public float ratio = 1.0f;
 
         protected override void PowerUpPayload()
         {
             base.PowerUpPayload();
-            ballInstance = GameObject.FindGameObjectsWithTag("Ball").First();
-            ballInstance.GetComponent<BallTransformation>().DecreaseSize(ratio);
+            _ballInstance = GameObject.FindGameObjectsWithTag("Ball").First();
+            _ballInstance.GetComponent<BallTransformation>().DecreaseSize(ratio);
             StartCoroutine(IncreaseBallSizeAfterTimeOut());
         }
 
         private IEnumerator IncreaseBallSizeAfterTimeOut()
         {
             yield return new WaitForSeconds(timeBeforeSizeResetSeconds);
-            if (ballInstance != null)
+            if (_ballInstance != null)
             {
-                ballInstance.GetComponent<BallTransformation>().IncreaseSize(ratio);
+                _ballInstance.GetComponent<BallTransformation>().IncreaseSize(ratio);
             }
         }
     }

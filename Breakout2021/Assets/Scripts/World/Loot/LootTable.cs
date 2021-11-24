@@ -16,9 +16,9 @@ namespace Owahu.Breakout.World.Loot
         private float _probabilityTotalWeight;
 
         /// <summary>
-        /// Calculates the percentage and asigns the probabilities how many times
+        /// Calculates the percentage and assigns the probabilities how many times
         /// the items can be picked. Function used also to validate data when tweaking numbers in editor.
-        /// </summary>	
+        /// </summary>
         public void ValidateTable()
         {
             // Prevent editor from "crying" when the item list is empty :)
@@ -27,7 +27,8 @@ namespace Owahu.Breakout.World.Loot
                 return;
             }
 
-            var currentProbabilityWeightMaximum = lootDropItems.Aggregate(0f, (current, lootDropItem) => CalculateCurrentProbabilityWeightMaximum(lootDropItem, current));
+            var currentProbabilityWeightMaximum = lootDropItems.Aggregate(0f,
+                (current, lootDropItem) => CalculateCurrentProbabilityWeightMaximum(lootDropItem, current));
 
             _probabilityTotalWeight = currentProbabilityWeightMaximum;
             foreach (var lootDropItem in lootDropItems)
@@ -42,7 +43,8 @@ namespace Owahu.Breakout.World.Loot
                 ((lootDropItem.ProbabilityWeight) / _probabilityTotalWeight) * 100;
         }
 
-        private static float CalculateCurrentProbabilityWeightMaximum(T lootDropItem, float currentProbabilityWeightMaximum)
+        private static float CalculateCurrentProbabilityWeightMaximum(T lootDropItem,
+            float currentProbabilityWeightMaximum)
         {
             if (lootDropItem.ProbabilityWeight < 0f)
             {
@@ -80,10 +82,8 @@ namespace Owahu.Breakout.World.Loot
                 pickedNumber > lootDropItem.ProbabilityRangeFrom &&
                 pickedNumber < lootDropItem.ProbabilityRangeTo))
             {
-                {
-                    loot = lootDropItem;
-                    return true;
-                }
+                loot = lootDropItem;
+                return true;
             }
 
             loot = null;

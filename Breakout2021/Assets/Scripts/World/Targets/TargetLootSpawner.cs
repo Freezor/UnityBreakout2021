@@ -9,7 +9,6 @@ namespace Owahu.Breakout.World.Targets
         // Loot drop table that contains items that can spawn
         public GenericLootDropTableGameObject lootDropTable;
 
-
         void OnValidate()
         {
             // Validate table and notify the programmer / designer if something went wrong.

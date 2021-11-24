@@ -40,7 +40,6 @@ namespace Owahu.Breakout.World.PowerUps.Events
             }
         }
 
-        // Use this for initialization
         void Start()
         {
             // Look for every object tagged as a listener

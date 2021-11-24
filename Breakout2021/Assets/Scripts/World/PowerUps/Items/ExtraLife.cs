@@ -6,7 +6,6 @@ namespace Owahu.Breakout.World.PowerUps.Items
         {
             base.PowerUpPayload ();
       
-            // Payload is to give some health bonus
             GameManager.GameManager.Instance.AddLife();  
         }
     }

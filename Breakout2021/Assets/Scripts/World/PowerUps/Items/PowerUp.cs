@@ -106,7 +106,8 @@ namespace Owahu.Breakout.World.PowerUps.Items
         {
             if (specialEffect != null)
             {
-                Instantiate(specialEffect, transform.position, transform.rotation, transform);
+                var parent = transform;
+                Instantiate(specialEffect, parent.position, parent.rotation, parent);
             }
 
             if (soundEffect != null)
@@ -148,7 +149,6 @@ namespace Owahu.Breakout.World.PowerUps.Items
         protected virtual void DestroySelfAfterDelay()
         {
             // Arbitrary delay of some seconds to allow particle, audio is all done
-            // TODO could tighten this and inspect the sfx? Hard to know how many, as subclasses could have spawned their own
             Destroy(gameObject, 10f);
         }
     }
