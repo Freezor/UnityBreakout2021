@@ -15,7 +15,7 @@ namespace Owahu.Breakout.World.Ball
 
         public void DecreaseSize(float ratio)
         {
-            //TODO: Does not work correctly, Build Level, Gameoverscreen, transition to next level, Start Selection Menu
+            // TODO: Gameoverscreen, transition to next level, Start Selection Menu, GameManager check if balls = 0 and spawn new ball if life >0
             var transformLocalScale = transform.localScale;
             var scaleChange = new Vector3(transformLocalScale.x - ratio, transformLocalScale.y - ratio,
                 transformLocalScale.z);

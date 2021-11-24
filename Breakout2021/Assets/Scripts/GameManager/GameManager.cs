@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Owahu.Breakout.GameManager
@@ -12,6 +13,7 @@ namespace Owahu.Breakout.GameManager
         public static GameManager Instance;
         private int _scoreMultiplier = 1;
         public int temporaryScoreMultiplier = 0;
+        public GameObject ballPrefab;
 
         [SerializeField] private int PlayerLife = 0;
 
@@ -55,6 +57,24 @@ namespace Owahu.Breakout.GameManager
             {
                 // TODO: GameOver
             }
+        }
+
+        private void FixedUpdate()
+        {
+            if (Instance.PlayerLife > 0 && Instance.BallsInGame < 1)
+            {
+                Instantiate(ballPrefab);
+                Instance.BallsInGame += 1;
+            }
+
+            if (Instance.PlayerLife <= 0)
+            {
+                ShowGameOverScreen();
+            }
+        }
+
+        private void ShowGameOverScreen()
+        {
         }
 
         public void AddLife()

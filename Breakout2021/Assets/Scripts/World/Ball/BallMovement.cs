@@ -81,15 +81,15 @@ namespace Owahu.Breakout.World.Ball
                 new Vector2(position.x, position.y + PositionYModificatorToDisplayBallAbovePlayer);
         }
 
-        void OnCollisionEnter2D(Collision2D col)
+        void OnCollisionEnter2D(Collision2D collision2D)
         {
-            switch (col.gameObject.name.ToLower())
+            switch (collision2D.gameObject.name.ToLower())
             {
                 // Hit the Racket?
                 case "player":
                 {
                     GameManager.GameManager.Instance.AddScoreToHighScore();
-                    CalculateRacketCollision(col);
+                    CalculateRacketCollision(collision2D);
                     break;
                 }
                 case "block":
@@ -98,11 +98,11 @@ namespace Owahu.Breakout.World.Ball
             }
         }
 
-        private void CalculateRacketCollision(Collision2D collider)
+        private void CalculateRacketCollision(Collision2D collision2D)
         {
             var xAxisDirection = HitFactor(transform.position,
-                collider.transform.position,
-                collider.collider.bounds.size.x);
+                collision2D.transform.position,
+                collision2D.collider.bounds.size.x);
 
             // Calculate direction, set length to 1
             var direction = new Vector2(xAxisDirection, 1).normalized;
@@ -110,7 +110,7 @@ namespace Owahu.Breakout.World.Ball
             // Set Velocity with dir * speed
             _ballRigidBody.velocity = direction * speed;
 
-            var tweak = new Vector2(Random.Range(0f, 0.1f), Random.Range(0f, 0.1f));
+            var tweak = new Vector2(Random.Range(0f, 0.2f), Random.Range(0f, 0.2f));
             _ballRigidBody.velocity += tweak;
         }
 
