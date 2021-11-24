@@ -156,4 +156,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootDropTable:
-    lootDropItems: []
+    lootDropItems:
+    - Item: {fileID: 0}
+      ProbabilityWeight: 80
+      ProbabilityPercent: 69.565216
+      ProbabilityRangeFrom: 0
+      ProbabilityRangeTo: 80
+    - Item: {fileID: 805637034429164311, guid: 7b19aa901ec994cd0aa43fecf1099ff5, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 8.695652
+      ProbabilityRangeFrom: 80
+      ProbabilityRangeTo: 90
+    - Item: {fileID: 4638146878091883165, guid: cc78010c31443425499e0d5882fbc69d, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 8.695652
+      ProbabilityRangeFrom: 90
+      ProbabilityRangeTo: 100
+    - Item: {fileID: 1882184803584439053, guid: fefedfd9683a4a541875bafd16bbf839, type: 3}
+      ProbabilityWeight: 10
+      ProbabilityPercent: 8.695652
+      ProbabilityRangeFrom: 100
+      ProbabilityRangeTo: 110
+    - Item: {fileID: 3305336796724678273, guid: 5b599be16c875c74fbbeb5b9fd2b58b7, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 4.347826
+      ProbabilityRangeFrom: 110
+      ProbabilityRangeTo: 115

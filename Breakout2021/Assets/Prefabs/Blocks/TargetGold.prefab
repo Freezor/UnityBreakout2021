@@ -156,4 +156,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootDropTable:
-    lootDropItems: []
+    lootDropItems:
+    - Item: {fileID: 0}
+      ProbabilityWeight: 30
+      ProbabilityPercent: 40
+      ProbabilityRangeFrom: 0
+      ProbabilityRangeTo: 30
+    - Item: {fileID: 805637034429164311, guid: 7b19aa901ec994cd0aa43fecf1099ff5, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 30
+      ProbabilityRangeTo: 35
+    - Item: {fileID: 7558471002272048301, guid: 06901421f8037ec4f803f9b0a2123055, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 35
+      ProbabilityRangeTo: 40
+    - Item: {fileID: 7470358408380330297, guid: 55c1d218f2116094294add6d0f65a84b, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 40
+      ProbabilityRangeTo: 45
+    - Item: {fileID: 6010992249576804260, guid: ba7d4bb5030cc4141b4e090265f055cc, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 45
+      ProbabilityRangeTo: 50
+    - Item: {fileID: 3305336796724678273, guid: 5b599be16c875c74fbbeb5b9fd2b58b7, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 50
+      ProbabilityRangeTo: 55
+    - Item: {fileID: 1863507355260861158, guid: ae53de81dd82a4d2e8030149a58a3d8e, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 55
+      ProbabilityRangeTo: 60
+    - Item: {fileID: 4638146878091883165, guid: cc78010c31443425499e0d5882fbc69d, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 60
+      ProbabilityRangeTo: 65
+    - Item: {fileID: 1723367004350821627, guid: b0218f955b23bad4e806263aff1187d1, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 65
+      ProbabilityRangeTo: 70
+    - Item: {fileID: 1882184803584439053, guid: fefedfd9683a4a541875bafd16bbf839, type: 3}
+      ProbabilityWeight: 5
+      ProbabilityPercent: 6.6666665
+      ProbabilityRangeFrom: 70
+      ProbabilityRangeTo: 75

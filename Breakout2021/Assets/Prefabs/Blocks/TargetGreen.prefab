@@ -158,42 +158,42 @@ MonoBehaviour:
   lootDropTable:
     lootDropItems:
     - Item: {fileID: 0}
-      ProbabilityWeight: 60
-      ProbabilityPercent: 46.153847
+      ProbabilityWeight: 600
+      ProbabilityPercent: 89.55224
       ProbabilityRangeFrom: 0
-      ProbabilityRangeTo: 60
-    - Item: {fileID: 7936094570371613882, guid: cc78010c31443425499e0d5882fbc69d, type: 3}
+      ProbabilityRangeTo: 600
+    - Item: {fileID: 4638146878091883165, guid: cc78010c31443425499e0d5882fbc69d, type: 3}
       ProbabilityWeight: 10
-      ProbabilityPercent: 7.6923075
-      ProbabilityRangeFrom: 60
-      ProbabilityRangeTo: 70
+      ProbabilityPercent: 1.4925373
+      ProbabilityRangeFrom: 600
+      ProbabilityRangeTo: 610
     - Item: {fileID: 805637034429164311, guid: 7b19aa901ec994cd0aa43fecf1099ff5, type: 3}
       ProbabilityWeight: 10
-      ProbabilityPercent: 7.6923075
-      ProbabilityRangeFrom: 70
-      ProbabilityRangeTo: 80
+      ProbabilityPercent: 1.4925373
+      ProbabilityRangeFrom: 610
+      ProbabilityRangeTo: 620
     - Item: {fileID: 7558471002272048301, guid: 06901421f8037ec4f803f9b0a2123055, type: 3}
       ProbabilityWeight: 10
-      ProbabilityPercent: 7.6923075
-      ProbabilityRangeFrom: 80
-      ProbabilityRangeTo: 90
+      ProbabilityPercent: 1.4925373
+      ProbabilityRangeFrom: 620
+      ProbabilityRangeTo: 630
     - Item: {fileID: 3305336796724678273, guid: 5b599be16c875c74fbbeb5b9fd2b58b7, type: 3}
       ProbabilityWeight: 15
-      ProbabilityPercent: 11.538462
-      ProbabilityRangeFrom: 90
-      ProbabilityRangeTo: 105
+      ProbabilityPercent: 2.238806
+      ProbabilityRangeFrom: 630
+      ProbabilityRangeTo: 645
     - Item: {fileID: 6010992249576804260, guid: ba7d4bb5030cc4141b4e090265f055cc, type: 3}
       ProbabilityWeight: 10
-      ProbabilityPercent: 7.6923075
-      ProbabilityRangeFrom: 105
-      ProbabilityRangeTo: 115
+      ProbabilityPercent: 1.4925373
+      ProbabilityRangeFrom: 645
+      ProbabilityRangeTo: 655
     - Item: {fileID: 7470358408380330297, guid: 55c1d218f2116094294add6d0f65a84b, type: 3}
       ProbabilityWeight: 5
-      ProbabilityPercent: 3.8461537
-      ProbabilityRangeFrom: 115
-      ProbabilityRangeTo: 120
+      ProbabilityPercent: 0.74626863
+      ProbabilityRangeFrom: 655
+      ProbabilityRangeTo: 660
     - Item: {fileID: 1723367004350821627, guid: b0218f955b23bad4e806263aff1187d1, type: 3}
       ProbabilityWeight: 10
-      ProbabilityPercent: 7.6923075
-      ProbabilityRangeFrom: 120
-      ProbabilityRangeTo: 130
+      ProbabilityPercent: 1.4925373
+      ProbabilityRangeFrom: 660
+      ProbabilityRangeTo: 670
