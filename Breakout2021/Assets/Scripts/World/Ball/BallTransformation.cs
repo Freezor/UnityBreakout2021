@@ -15,7 +15,7 @@ namespace Owahu.Breakout.World.Ball
 
         public void DecreaseSize(float ratio)
         {
-            //TODO: Does not work correctly, Add bomb powerup, Create Target LootTables, Build Level, Gameoverscreen, transition to next level, Start Selection Menu
+            //TODO: Does not work correctly, Build Level, Gameoverscreen, transition to next level, Start Selection Menu
             var transformLocalScale = transform.localScale;
             var scaleChange = new Vector3(transformLocalScale.x - ratio, transformLocalScale.y - ratio,
                 transformLocalScale.z);
