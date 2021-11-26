@@ -43,47 +43,78 @@ namespace Owahu.Breakout.World.Ball
             {
                 LaunchBall();
             }
+
+            if (_ballRigidBody.position.y < -2)
+            {
+                ResetBall();
+            }
+        }
+
+        private void ResetBall()
+        {
+            GameManager.GameManager.Instance.AddScoreToHighScore();
+            if (GameManager.GameManager.Instance.OnlyOneBallInGame())
+            {
+                GameManager.GameManager.Instance.RemoveLife();
+                _isLaunched = false;
+                SetBallPositionAbovePlayerPosition();
+            }
+            else
+            {
+                GameManager.GameManager.Instance.BallsInGame--;
+                Destroy(this);
+            }
         }
 
         private void FixedUpdate()
         {
             if (!_isLaunched)
             {
-                var position = _player.position;
-                _ballRigidBody.position =
-                    new Vector2(position.x, position.y + PositionYModificatorToDisplayBallAbovePlayer);
-            }
-
-            if (_ballRigidBody.position.y < -2)
-            {
-                _ballRigidBody.position = Vector2.zero;
+                SetBallPositionAbovePlayerPosition();
             }
         }
 
-        void OnCollisionEnter2D(Collision2D col)
+        private void SetBallPositionAbovePlayerPosition()
         {
-            // Hit the Racket?
-            if (col.gameObject.name.ToLower() != "player")
-            {
-                return;
-            }
+            var position = _player.position;
+            _ballRigidBody.position =
+                new Vector2(position.x, position.y + PositionYModificatorToDisplayBallAbovePlayer);
+        }
 
-            // Calculate hit Factor
-            var x = HitFactor(transform.position,
-                col.transform.position,
-                col.collider.bounds.size.x);
+        void OnCollisionEnter2D(Collision2D collision2D)
+        {
+            switch (collision2D.gameObject.name.ToLower())
+            {
+                // Hit the Racket?
+                case "player":
+                {
+                    GameManager.GameManager.Instance.AddScoreToHighScore();
+                    CalculateRacketCollision(collision2D);
+                    break;
+                }
+                case "block":
+                    GameManager.GameManager.Instance.AddScoreMultiplier();
+                    break;
+            }
+        }
+
+        private void CalculateRacketCollision(Collision2D collision2D)
+        {
+            var xAxisDirection = HitFactor(transform.position,
+                collision2D.transform.position,
+                collision2D.collider.bounds.size.x);
 
             // Calculate direction, set length to 1
-            var dir = new Vector2(x, 1).normalized;
+            var direction = new Vector2(xAxisDirection, 1).normalized;
 
             // Set Velocity with dir * speed
-            _ballRigidBody.velocity = dir * speed;
+            _ballRigidBody.velocity = direction * speed;
 
-            var tweak = new Vector2(Random.Range(0f, 0.1f), Random.Range(0f, 0.1f));
+            var tweak = new Vector2(Random.Range(0f, 0.2f), Random.Range(0f, 0.2f));
             _ballRigidBody.velocity += tweak;
         }
 
-        private float HitFactor(Vector2 ballPos, Vector2 racketPos,
+        private float HitFactor(Vector2 ballPosition, Vector2 racketPosition,
             float racketWidth)
         {
             // ascii art:
@@ -91,7 +122,7 @@ namespace Owahu.Breakout.World.Ball
             // 1  -0.5  0  0.5   1  <- x value
             // ===================  <- racket
             //
-            return (ballPos.x - racketPos.x) / racketWidth;
+            return (ballPosition.x - racketPosition.x) / racketWidth;
         }
     }
 }
